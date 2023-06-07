@@ -17,8 +17,8 @@
             </TransitionGroup>
             <div v-if = "!isLoading" v-intersection = 'fetchPokemonsList' class="observer"></div>
         </div>
-        <div v-if = "isLoading" class="loader">Loading...</div>
-        <h1 v-else-if="!isLoading && sortedPokemonsAndSearch.length === 0 && inputValue !== ''" class="not-found"> not found</h1>
+        <!-- <div v-if = "isLoading" class="loader">Loading...</div> -->
+        <h1 v-if="!isLoading && sortedPokemonsAndSearch.length === 0 && inputValue !== ''" class="not-found"> not found</h1>
     </div>
     
    
