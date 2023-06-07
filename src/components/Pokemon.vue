@@ -34,6 +34,7 @@
                 Pokemon has not evolved yet :(
             </div>
         </div>
+        <Loader v-if ="ELoading"/>
     </div>
     <Loader v-else class="loader"></Loader>
 </template>
@@ -141,15 +142,7 @@ import axios from 'axios';
                 isLoading: state => state.main.isLoading,
                 isError: state => state.main.isError,
                 choosenPokemon: state => state.main.choosenPokemon
-            }),
-            changeImg() {
-                return this.parseToArray(this.choosenPokemon.sprites);
-            },
-            /* getStatValue(statName) {
-                console.log(this.choosenPokemon);
-                const stat = this.choosenPokemon.stats.find(stat => stat.stat.name === statName);
-                return stat ? stat.base_stat : '';
-            } */
+            })
         },
         async beforeMount() {
             await this.$store.dispatch('main/fetchOnePokemon', this.$route.params.id);
