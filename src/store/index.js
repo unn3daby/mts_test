@@ -1,14 +1,8 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
+import { pokeModule } from "./pokeModule";
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+    modules: {
+        main: pokeModule
+    }
+});
